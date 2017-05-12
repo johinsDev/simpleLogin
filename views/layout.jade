@@ -16,11 +16,11 @@ html
           a.navbar-brand(href='/') AUTH
         #bs-example-navbar-collapse-2.collapse.navbar-collapse
           ul.nav.navbar-nav
-            li.active
+            li(class=(title == 'Home' ? 'active': ''))
               a(href='/') Members
-            li.active
+            li(class=(title == 'Login' ? 'active': ''))
               a(href='/sign_in') Login
-            li
+            li(class=(title == 'Register' ? 'active': ''))
               a(href='/sign_up') Register
           ul.nav.navbar-nav.navbar-right
             li.dropdown
@@ -34,6 +34,7 @@ html
                 li
                   a(href='#') Cerrar Sesion
     .container
+      != messages()
       block content
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
     script(src='javascripts/bootstrap.min.js')
